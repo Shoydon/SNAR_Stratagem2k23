@@ -17,43 +17,49 @@ window.title("Face_Recogniser")
 
 dialog_title = 'QUIT'
 dialog_text = 'Are you sure?'
- 
-window.configure(background='#2b2d42')
 
+window.configure(background='#2b2d42')
 
 window.grid_rowconfigure(0, weight=1)
 window.grid_columnconfigure(0, weight=1)
 
-
-message = tk.Label(window, text="Face Recognition Based Attendance System" ,bg="#8d99ae"  ,fg="#edf2f4"  ,width=50  ,height=3,font=('times', 30, 'italic bold underline')) 
+message = tk.Label(window, text="Hospital Appointment Booking System" ,bg="#8d99ae"  ,fg="#edf2f4"  ,width=50  ,height=3,font=('times', 30, 'italic bold underline')) 
 
 message.place(x=200, y=20)
 
-lbl = tk.Label(window, text="Enter ID",width=20  ,height=2  ,fg="#edf2f4"  ,bg="#ef233c" ,font=('times', 15, ' bold ') ) 
+lbl = tk.Label(window, text="Enter DOB(DDMMYY)",width=30  ,height=2  ,fg="#edf2f4"  ,bg="#ef233c" ,font=('times', 15, ' bold ') ) 
 lbl.place(x=400, y=200)
 
 txt = tk.Entry(window,width=20  ,bg="#8d99ae" ,fg="#edf2f4",font=('times', 15, ' bold '))
-txt.place(x=700, y=215)
+txt.place(x=800, y=215)
 
-lbl2 = tk.Label(window, text="Enter Name",width=20  ,fg="#edf2f4"  ,bg="#ef233c"    ,height=2 ,font=('times', 15, ' bold ')) 
-lbl2.place(x=400, y=300)
+lbl2 = tk.Label(window, text="Enter Patient Name",width=30  ,fg="#edf2f4"  ,bg="#ef233c"    ,height=2 ,font=('times', 15, ' bold ')) 
+lbl2.place(x=400, y=270)
 
 txt2 = tk.Entry(window,width=20  ,bg="#8d99ae"  ,fg="#edf2f4",font=('times', 15, ' bold ')  )
-txt2.place(x=700, y=315)
+txt2.place(x=800, y=290)
 
-lbl3 = tk.Label(window, text="Status : ",width=20  ,fg="#edf2f4"  ,bg="#ef233c"  ,height=2 ,font=('times', 15,'bold')) 
-lbl3.place(x=400, y=400)
+lbl3 = tk.Label(window, text="Enter reason of Visit",width=30  ,fg="#edf2f4"  ,bg="#ef233c"    ,height=2 ,font=('times', 15, ' bold ')) 
+lbl3.place(x=400, y=340)
+
+txt3 = tk.Entry(window,width=20  ,bg="#8d99ae"  ,fg="#edf2f4",font=('times', 15, ' bold ')  )
+txt3.place(x=800, y=365)
+txt4 = tk.Entry(window,width=20  ,bg="#8d99ae"  ,fg="#edf2f4",font=('times', 15, ' bold ')  )
+txt4.place(x=1100, y=365)
+
+lbl4 = tk.Label(window, text="Status : ",width=30  ,fg="#edf2f4"  ,bg="#ef233c"  ,height=2 ,font=('times', 15,'bold')) 
+lbl4.place(x=400, y=410)
 
 message = tk.Label(window, text="" ,bg="#ef233c"  ,fg="#edf2f4"  ,width=30  ,height=2, activebackground = "#d90429" ,font=('times', 15, ' bold ')) 
-message.place(x=700, y=400)
+message.place(x=800, y=410)
 
-lbl3 = tk.Label(window, text="Attendance : ",width=20  ,fg="#edf2f4"  ,bg="#ef233c"  ,height=2 ,font=('times', 15)) 
-lbl3.place(x=400, y=650)
+lbl5 = tk.Label(window, text="Attendance : ",width=30  ,fg="#edf2f4"  ,bg="#ef233c"  ,height=2 ,font=('times', 15)) 
+lbl5.place(x=400, y=480)
 
 
 message2 = tk.Label(window, text="" ,fg="#edf2f4"   ,bg="#ef233c",activeforeground = "green",width=30  ,height=5  ,font=('times', 15, ' bold ')) 
-message2.place(x=700, y=650)
- 
+message2.place(x=800, y=480)
+
 def clear():
     txt.delete(0, 'end')    
     res = ""
@@ -79,10 +85,13 @@ def is_number(s):
         pass
  
     return False
- 
+
 def TakeImages():        
     Id=(txt.get())
     name=(txt2.get())
+    doctor=(txt4.get())
+    reason=(txt3.get())
+
     if(is_number(Id) and name.isalpha()):
         cam = cv2.VideoCapture(0)
         harcascadePath = "haarcascade_frontalface_default.xml"
@@ -108,9 +117,9 @@ def TakeImages():
                 break
         cam.release()
         cv2.destroyAllWindows() 
-        res = "Images Saved for ID : " + Id +"   Name : "+ name
-        row = [Id , name]
-        with open('StudentDetails\StudentDetails.csv','a+') as csvFile:
+        res = " ID : " + Id +"   Name : "+ name
+        row = [Id , name, doctor, reason]
+        with open('PatientDetails\PatientDetails.csv','a+') as csvFile:
             writer = csv.writer(csvFile)
             writer.writerow(row)
         csvFile.close()
@@ -122,8 +131,7 @@ def TakeImages():
         if(name.isalpha()):
             res = "Enter Numeric Id"
             message.configure(text= res)
-   
-    
+
 def TrainImages():
    
     recognizer = cv2.face_LBPHFaceRecognizer.create()
@@ -197,19 +205,13 @@ def TrackImages():
     res=attendance
     message2.configure(text= res)
 
-  
-clearButton = tk.Button(window, text="Clear", command=clear  ,fg="#edf2f4"  ,bg="#ef233c"  ,width=20  ,height=2 ,activebackground = "#d90429" ,font=('times', 15, ' bold '))
-clearButton.place(x=950, y=200)
-clearButton2 = tk.Button(window, text="Clear", command=clear2  ,fg="#edf2f4"  ,bg="#ef233c"  ,width=20  ,height=2, activebackground = "#d90429" ,font=('times', 15, ' bold '))
-clearButton2.place(x=950, y=300)    
 takeImg = tk.Button(window, text="Take Images", command=TakeImages  ,fg="#edf2f4"  ,bg="#3a86ff"  ,width=20  ,height=3, activebackground = "#d90429" ,font=('times', 15, ' bold '))
-takeImg.place(x=200, y=500)
+takeImg.place(x=200, y=650)
 trainImg = tk.Button(window, text="Train Model", command=TrainImages  ,fg="#edf2f4"  ,bg="#3a86ff"  ,width=20  ,height=3, activebackground = "#d90429" ,font=('times', 15, ' bold '))
-trainImg.place(x=500, y=500)
+trainImg.place(x=500, y=650)
 trackImg = tk.Button(window, text="Mark Attendance", command=TrackImages  ,fg="#edf2f4"  ,bg="#3a86ff"  ,width=20  ,height=3, activebackground = "#d90429" ,font=('times', 15, ' bold '))
-trackImg.place(x=800, y=500)
+trackImg.place(x=800, y=650)
 quitWindow = tk.Button(window, text="Quit", command=window.destroy  ,fg="#edf2f4"  ,bg="#3a86ff"  ,width=20  ,height=3, activebackground = "#d90429" ,font=('times', 15, ' bold '))
-quitWindow.place(x=1100, y=500)
+quitWindow.place(x=1100, y=650)
 
- 
 window.mainloop()

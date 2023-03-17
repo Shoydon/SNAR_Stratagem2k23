@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "argon-depot-380817",
+  "private_key_id": "a63a4b13d3a6311a4588d321b1e0ecbbce7152df",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDEGCaKfdPr8OuG\nDDpsrvPiy9Hzg8dK7E6uc7nTNz8foyDDtiQhJam0FYaz+HyEz0m+e7N7+94Dbn5f\nn3Ydz0u6Nv4eyKzIQ6aCKXzwqCVLoZAeMI1DI6H832OVCM2JQ5k3+2+NK8yZd/S1\n5Bz9PUkaozma6Agt9U7z2J7Yd3rAEShUiAtL9VpT7L9eGyaDLA9KMyz1mT3uet6t\n+Q4rT6lxQRNd4DqAmMTm2aURAJatdzdHjiTriMhdhehZH6V79fWPkOOITzEC7MtE\n8eRpgfcPiPSo2VP9cN1FN7lRpqqXBKZRfs/oGhCbV7yVTYwdsLeft5swX89+dnkZ\nHFTace5XAgMBAAECggEANogEx8SgF1/jD179LFYmym4lz5NY65P1eXwDNCKL8k9a\nADL5ryIbJFJMKGY0snY2qrsZuaPcJJYonIzquvV3uKwsVQE3U2XEuzOwY/hOjs66\nFjsoPYB+PqUcu0g8aCydQj0w01BX0GHUcnSiPyY42yiDD3nxNF6gex1FZysqvphJ\nlX+zQ5ZfhwbcMvUImuK4qR0IwLNAOQ86iWrgJgHkxIKPeMuUI50EK0xnlkQi6NDB\nx+L+OgAReTsGu6slhxE8JI4pvzsBaMMaUR/h3b9tWoukpDzA8YGffsH4VP1dx78H\n+4boB+5FP1DzObsd8qZOIVO4k6Va7PZlmiccC3MpqQKBgQD4oX3+AuPkAZ03/KuU\nW3ebRu+NLcdRzWjcG1mncJZ8OS2V0Mi3Qh8wS3JRhcSHFOkCVseUO9rE5rGOScgC\ntsa1EZ8gEAPAfDWeTtbURVHuGxlMOgaFDf5CSN8VzuKRs+eEQu2k2lW2QLDNgf1v\n98GR27ED6OltmylG3cWyPxQwRQKBgQDJ6AiClbnPPsQu2OKa4RLlJY5pC2X5nA5v\nD1ZEO4QyJMyufBENWRAiq5r6OdaV5YH2u6PwSas9XDfYOytmc3NVQX9V28MtnH6j\nBSkxsJ8vQql1DU5fxD8N4cNytp3LlkDUUKFFlxUswB9Ku/dTXmmCyakZDQeErU0+\nlcntXoqT6wKBgQCh4wTWT6ty2lo0CiDuCGBoileP5S7S5JxSNLy7eWOCnvg/hCIs\nsLD+ESHuUtsT2VmeXEK3EgHwEwWpUAEbQ0c+vqqNhd/rhPSkj1DyBfDCyIJAT8fO\n+r2DC0+2M27yz+D/DVUO8dq9QIHeTbVnIjq3bgRkN1NGOrE1o1EGLmxGwQKBgQCL\n1NLv/VnuGf4so7Bsqyw23se+IFLDiDzG1cxc/QsU3z+SKAJ3SBNQr6BpY90lewmD\nI3jqVVru6AsVCgWIsrRRe0cA425NDHD33f8llrjoNja+BjUdRgCVUKHXtHmcIbdM\nU3sdgwD7OSNy0rL7XguctKUT4F4wmQVCLuLmLe+zeQKBgQDMFpiOF4UqdzqVlxGY\n8VV5fEbYIyAUXhC+bfGkelVDWKE0QtJRBIfNUSE0r/Rmby8pri/2nZ7ZxHqhiUFS\n90y6btiD2PQ8FugVqlBz+DwA1msuFRLCCMr5Q7wkQqjUel2SpWYSMC3w/A9DW0rQ\npADajw2/WBdYpUKiO9lg7TrU6A==\n-----END PRIVATE KEY-----\n",
+  "client_email": "gsheet@argon-depot-380817.iam.gserviceaccount.com",
+  "client_id": "107148971527913705406",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gsheet%40argon-depot-380817.iam.gserviceaccount.com"
+}

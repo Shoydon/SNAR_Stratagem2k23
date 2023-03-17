@@ -31,10 +31,6 @@ doctors = {
     "doctor10": "010"
 }
 
-# db.update("A1","NAME")
-# db.update("B1","DOB")
-# db.update("C1","id")
-# db.update("D1","password")
 db.update("A1", [["Name", "DOB", "ID", "password"]])
 db.format("A1", {'textFormat': {'bold': True}})
 db.format("B1", {'textFormat': {'bold': True}})
@@ -44,10 +40,6 @@ people = db.acell("F1").value
 people_counter = int(0 if people is None else people)
 db.update("F1", people_counter)
 
-# app.update("A1", "Name")
-# app.update("B1", "Disease name")
-# app.update("C1", "Doctor name")
-# app.update("D1", "Token number")
 app.update("A1", [["Name", "Disease", "Doctor name", "Token number"]])
 app.format("A1", {'textFormat': {'bold': True}})
 app.format("B1", {'textFormat': {'bold': True}})

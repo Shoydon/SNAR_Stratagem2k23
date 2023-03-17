@@ -162,10 +162,12 @@ def TrackImages():
     recognizer.read("TrainingImage\Trainner.yml")
     harcascadePath = "haarcascade_frontalface_default.xml"
     faceCascade = cv2.CascadeClassifier(harcascadePath);    
-    df=pd.read_csv("StudentDetails\StudentDetails.csv")
+    df=pd.read_csv("PatientDetails\PatientDetails.csv")
     cam = cv2.VideoCapture(0)
     font = cv2.FONT_HERSHEY_SIMPLEX        
-    col_names =  ['Id','Name','Date','Time']
+    # col_names =  ['Id','Name','Date','Time']
+    col_names =  ['Id','Name','Doctor','Date','Time','Token']
+
     attendance = pd.DataFrame(columns = col_names)    
     while True:
         ret, im =cam.read()
@@ -178,9 +180,16 @@ def TrackImages():
                 ts = time.time()      
                 date = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d')
                 timeStamp = datetime.datetime.fromtimestamp(ts).strftime('%H:%M:%S')
+                listdoctors={"Leslie": 101, "Francis": 201, "Pramod": 301}
+                # docname=df.loc[df['Id']==Id]['Doctor Name'].values
+                # tokennumber=listdoctors[docname]
+                tokentime=datetime.datetime.fromtimestamp(ts).strftime('%H%M')
+                token=f"{tokentime}"
                 aa=df.loc[df['Id'] == Id]['Name'].values
+                bb=df.loc[df['Id'] == Id]['Doctor Name'].values
+
                 tt=str(Id)+"-"+aa
-                attendance.loc[len(attendance)] = [Id,aa,date,timeStamp]
+                attendance.loc[len(attendance)] = [Id,aa,bb,date,timeStamp,token]
                 
             else:
                 Id='Unknown'                
@@ -197,7 +206,7 @@ def TrackImages():
     date = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d')
     timeStamp = datetime.datetime.fromtimestamp(ts).strftime('%H:%M:%S')
     Hour,Minute,Second=timeStamp.split(":")
-    fileName="Attendance\Attendance_"+date+"_"+Hour+"-"+Minute+"-"+Second+".csv"
+    fileName="Attendance\Attendance.csv"
     attendance.to_csv(fileName,index=False)
     cam.release()
     cv2.destroyAllWindows()

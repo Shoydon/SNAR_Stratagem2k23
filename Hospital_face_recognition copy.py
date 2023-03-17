@@ -220,7 +220,11 @@ def TrackImages():
                 ts = time.time()      
                 date = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d')
                 timeStamp = datetime.datetime.fromtimestamp(ts).strftime('%H:%M:%S')
-                listdoctors={"Leslie": 101, "Francis": 201, "Pramod": 301}
+                listdoctors={
+                    "Leslie": 101, 
+                    "Francis": 201, 
+                    "Pramod": 301
+                }
                 # docname=df.loc[df['Id']==Id]['Doctor Name'].values
                 # tokennumber=listdoctors[docname]
                 tokentime=datetime.datetime.fromtimestamp(ts).strftime('%H%M')

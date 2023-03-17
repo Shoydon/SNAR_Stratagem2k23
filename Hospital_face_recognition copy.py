@@ -39,13 +39,19 @@ db.format("A1", {'textFormat': {'bold': True}})
 db.format("B1", {'textFormat': {'bold': True}})
 db.format("C1", {'textFormat': {'bold': True}})
 db.format("D1", {'textFormat': {'bold': True}})
+people = db.acell("F1").value
+people_counter = int(0 if people is None else people)
+db.update("F1", people_counter)
 
 app.update("A1", "Name")
 app.update("B1", "Disease name")
-app.update("B1", "Token number")
-db.format("A1", {'textFormat': {'bold': True}})
-db.format("B1", {'textFormat': {'bold': True}})
-db.format("C1", {'textFormat': {'bold': True}})
+app.update("C1", "Token number")
+app.format("A1", {'textFormat': {'bold': True}})
+app.format("B1", {'textFormat': {'bold': True}})
+app.format("C1", {'textFormat': {'bold': True}})
+app_total = app.acell("F1").value
+app_counter = int(0 if app_total is None else app_total)
+app.update("F1", app_counter)
 
 window = tk.Tk()
 window.title("Face_Recogniser")

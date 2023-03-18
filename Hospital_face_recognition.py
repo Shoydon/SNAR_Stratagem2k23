@@ -180,11 +180,15 @@ def TrackImages():
                 ts = time.time()      
                 date = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d')
                 timeStamp = datetime.datetime.fromtimestamp(ts).strftime('%H:%M:%S')
-                listdoctors={"Leslie": 101, "Francis": 201, "Pramod": 301}
-                # docname=df.loc[df['Id']==Id]['Doctor Name'].values
-                # tokennumber=listdoctors[docname]
+                listdoctors={"Leslie": 101, "Francis": 102, "Pramod": 201,"Subhash":202,"Chris":301,"Myron":302}
+                print(df.loc[df.Id==Id]['Doctor Name'])
+                docname=df.loc[df.Id==Id]['Doctor Name'].to_numpy()
+                docname=docname[0]
+                # print(df)
+                print(docname)
+                tokennumber=listdoctors.get(docname)
                 tokentime=datetime.datetime.fromtimestamp(ts).strftime('%H%M')
-                token=f"{tokentime}"
+                token=f"{tokennumber} : {tokentime}"
                 aa=df.loc[df['Id'] == Id]['Name'].values
                 bb=df.loc[df['Id'] == Id]['Doctor Name'].values
 

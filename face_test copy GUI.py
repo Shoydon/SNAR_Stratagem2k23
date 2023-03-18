@@ -74,7 +74,7 @@ while(choice != "0"):
     counter = int(0 if value is None else value)
     wks.update("F1", counter)
 
-    choice = input("0. EXIT\n1. Register\n2. Done\nChoice: ")
+    choice = input("0. EXIT\n1. Book appointment\n2. Done\nChoice: ")
 
     if choice == "1":
         c_curr = counter+2

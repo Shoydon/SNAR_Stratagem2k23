@@ -327,7 +327,7 @@ canvas.create_text(
 )
 
 button_image_1 = PhotoImage(
-    file=relative_to_assets("D:/Hackathons/GDA CRCE Hackthon/Face-Recognition-Based-Attendance-System-master/Hospital Appointment System/build1/assets/frame0/button_1.png"))
+    file=relative_to_assets("D:/Shoy/College/TE/Hackover 3.0/git/SNAR_Stratagem2k23/build1/assets/frame0/button_1.png"))
 
 button_1 = Button(
     image=button_image_1,
@@ -345,7 +345,7 @@ button_1.place(
 )
 
 button_image_2 = PhotoImage(
-    file=relative_to_assets("D:/Hackathons/GDA CRCE Hackthon/Face-Recognition-Based-Attendance-System-master/Hospital Appointment System/build1/assets/frame0/button_2.png"))
+    file=relative_to_assets("D:/Shoy/College/TE/Hackover 3.0/git/SNAR_Stratagem2k23/build1/assets/frame0/button_2.png"))
 button_2 = Button(
     image=button_image_2,
     borderwidth=0,
